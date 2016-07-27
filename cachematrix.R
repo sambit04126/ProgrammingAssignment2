@@ -8,7 +8,7 @@
 # that can cache its inverse.
 # Input should be a invertible matrix
 # Returns list of methods to access the attributes
-makeCacheMatrix <- function(x) {
+makeCacheMatrix <- function(x=matrix()) {
   m <- NULL
   ## Setter for matrix
   set <- function(y) {
@@ -40,7 +40,7 @@ makeCacheMatrix <- function(x) {
 #been calculated (and the matrix has not changed), 
 #then the cachesolve should retrieve the inverse from the cache.
 
-cacheSolve <- function(x) {
+cacheSolve <- function(x, ...) {
   m <- x$getinv()
   if (!is.null(m)) {
     ## Check if cache has the inv value
